@@ -1,0 +1,13 @@
+.home__wrapper {
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: wrap;
+    /*max-width: 960px;*/
+    border: 10px solid grey;
+}
+
+.card__wrapper {
+	/*width:30%;*/
+}

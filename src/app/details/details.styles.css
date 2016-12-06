@@ -1,0 +1,10 @@
+.details__wrapper {
+    background: greenyellow;
+}
+.details_image_preview {
+    width: 30px;
+}
+
+.details_image_preview>img {
+    width: 100%;
+}
