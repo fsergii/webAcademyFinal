@@ -1,11 +1,13 @@
 /**
  * Created by IlyaLitvinov on 15.10.16.
  */
+
+ import './menu.styles.css'
 class MenuController {
     /** @ngInject */
     constructor($stateParams) {
-        console.log("home created!");
-        this.header = "Menu page";
+        this.header = "Store navbar";
+        this.menuItems = ["Home", "About", "Cart"];
     }
 }
 
@@ -14,9 +16,23 @@ const MenuComponent = {
         "data": "="
     },
     template: `
-        <ul>
-            <li ng-repeat="item in $ctrl.data track by $index">{{item}}</li>
-        </ul>
+    <div class = "menu__wrapper">
+        <nav class="navbar navbar-light">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="nav-item">
+                    <a ui-sref="app.home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a ui-sref="app.about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a ui-sref="app.cart">Cart</a>
+                </li>
+            </ul>
+        </div>
+        </nav>
+    </div>
     `,
     controller: MenuController
 

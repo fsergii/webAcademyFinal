@@ -10,19 +10,16 @@ class DetailsController {
         this._model = phonesModel;
         this._model.getOne($stateParams.id).then((data)=> {
             this.item = data;
-             // console.log(this.item)
+             // console.log(this.item.hardware)
+             // debugger;
             this.mainImage = "http://localhost:4001/api/v1/" + data.images[0];
         });
         // debugger;
         this.item = {};
         this.mainImage = null;
         this._id = $stateParams.id;
-        this._cart = localStorage.cart.split(',')
-        // debugger;
-        // console.log(this.cart)
-        // this._name = this.item.name;
-
-        // debugger;
+        this._cart = localStorage.cart.split(',');
+ 
     }
     showFull (uri) {
         this.mainImage = "http://localhost:4001/api/v1/" + uri;
@@ -38,13 +35,23 @@ class DetailsController {
 const DetailsComponent = {
     template: `
        <div class="details__wrapper">
-            <div class="col m4 s4 l4">
-                <slide-show images="$ctrl.item.images"></slide-show>
+            <div class="details__all_images">
+                <div class="details__small_image" ng-repeat="image in $ctrl.item.images">
+                    <img ng-src="{{'http://localhost:4001/api/v1/'+image}}" ng-click="$ctrl.showFull(image)">
+                </div>
             </div>
+            <div class="details__main_image">
+                <img ng-src="{{$ctrl.mainImage}}">
+            </div>
+            <div class="details__text">
+                <techspecs data="$ctrl.item"></techspecs>
+            </div>
+
+            <div class="details__add_to_cart" ng-click="$ctrl.addToCart($ctrl._id)">
+                Add to cart
+            </div>  
         </div>
-        <div ng-click="$ctrl.addToCart($ctrl._id)">
-            Add to cart
-        </div>  
+        
     `,
     controller: DetailsController
 };

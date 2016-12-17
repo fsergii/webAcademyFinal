@@ -17,9 +17,8 @@ class AboutController {
 
 const AboutComponent = {
     template: `
-        <h1>{{$ctrl.header}}</h1>
-        <menu data="$ctrl.menuItems"></menu>
-        <div class="waves-effect waves-light btn" ng-click="$ctrl.addItem()">set Item to service</div>
+        <h2>Финальное задание. Фесенко Сергей</h2>
+        
     `,
     controller: AboutController
 };

@@ -16,6 +16,7 @@ class HomeController {
             // debugger;
             this.phones = data.map((item) => {
                 item.imgUrl = "http://localhost:4001/api/v1/" + item.imgUrl;
+                // console.log(item)
                 // debugger;
                 return item;
 

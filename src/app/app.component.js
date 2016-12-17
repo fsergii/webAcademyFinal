@@ -10,12 +10,8 @@ class AppComonentController {
 
 const AppComponent = {
     template: `
-        <div class="page_wrapper" >
-            <div class = "menu_wrapper">
-                <a ui-sref="app.home" class="menu">Home</a>
-                <a ui-sref="app.about" class="menu">About</a>
-                <a ui-sref="app.cart" class="menu">Cart</a>
-            </div>
+        <div class="page__wrapper">
+            <menu></menu>
             <ui-view></ui-view>
         </div>
     `,

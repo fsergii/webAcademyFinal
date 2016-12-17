@@ -18,6 +18,10 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
             url: '/phones/:id',
             component: 'phoneDetails'
         })
+        .state('app.cart', {
+            url: '/cart',
+            component: 'cart'
+        })
         .state('app.about', {
             url: '/about',
             component: 'about'
