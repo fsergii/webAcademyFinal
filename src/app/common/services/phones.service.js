@@ -5,6 +5,7 @@ class PhonesModel {
     constructor($http) {
         this.data = ['asdasd', 'sadasdasd'];
         this.$http = $http;
+        this._cart = localStorage.cart.split(',');
         // debugger;
     }
 
@@ -25,9 +26,12 @@ class PhonesModel {
         })
     }
 
-    addToCart(id) {
-        this._id = id;
-        localStorage.setItem('cart', _id);
+    addToCart (id) {
+        console.log(id)
+        // console.log(this.cart.splice(0,0,id).join(','));
+        this._cart.splice(0,0,id);
+        // console.log(this.tmp_cart)
+        localStorage.setItem('cart', this._cart.join(','));
     }
 }
 

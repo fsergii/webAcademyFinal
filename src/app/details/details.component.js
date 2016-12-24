@@ -24,12 +24,12 @@ class DetailsController {
     showFull (uri) {
         this.mainImage = "http://localhost:4001/api/v1/" + uri;
     }
-    addToCart (id) {
-        // console.log(this.cart.splice(0,0,id).join(','));
-        this._cart.splice(0,0,this._id);
-        // console.log(this.tmp_cart)
-        localStorage.setItem('cart', this._cart.join(','));
-    }
+    // addToCart (id) {
+    //     // console.log(this.cart.splice(0,0,id).join(','));
+    //     this._cart.splice(0,0,this._id);
+    //     // console.log(this.tmp_cart)
+    //     localStorage.setItem('cart', this._cart.join(','));
+    // }
 }
 
 const DetailsComponent = {
@@ -47,7 +47,7 @@ const DetailsComponent = {
                 <techspecs data="$ctrl.item"></techspecs>
             </div>
 
-            <div class="details__add_to_cart" ng-click="$ctrl.addToCart($ctrl._id)">
+            <div class="details__add_to_cart" ng-click="$ctrl._model.addToCart($ctrl._id)">
                 Add to cart
             </div>  
         </div>

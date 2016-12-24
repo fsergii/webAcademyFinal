@@ -10,6 +10,7 @@ import {MenuComponent} from './app/components/menu.component';
 import {PreviewComponent} from './app/home/preview.component';
 import {DetailsComponent} from './app/details/details.component';
 import {CartComponent} from './app/cart/cart.component';
+import {CartElement} from './app/cart/cartElement.component';
 import {TechSpecsComponent} from './app/details/techSpecs.component';
 // import SlideShow from './app/details/slideShow.directive';
 import PhonesModel from './app/common/services/phones.service';
@@ -27,6 +28,7 @@ angular
     .component("about", AboutComponent)
     .component("home", HomeComponent)
     .component("cart", CartComponent)
+    .component("cartelement", CartElement)
     .component("preview", PreviewComponent)
     .component("phoneDetails", DetailsComponent)
     .component("techspecs", TechSpecsComponent)

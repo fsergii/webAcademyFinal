@@ -1,12 +1,13 @@
 /**
  * Created by IlyaLitvinov on 15.10.16.
  */
-class PreviewController {
+class CartElementController {
     /** @ngInject */
     constructor($stateParams, phonesModel) {
         // console.log("home created!");s
         this.header = "Phones";
         this.model = phonesModel;
+        console.log(1);
         // debugger;
     }
 
@@ -24,28 +25,29 @@ class PreviewController {
     // }
 }
 
-const PreviewComponent = {
+const CartElement = {
     bindings: {
         "data": "="
     },
     template: `
     <div class = "card__wrapper">
-      <a ui-sref="app.homeDetails({id: $ctrl.data._id})">
-          
-            <div class="card" id="{{$ctrl.data._id}}">
-              <img class="card-img-top" ng-src="{{$ctrl.data.imgUrl}}">
-              <div class="card-block">
-                <h4 class="card-title">{{$ctrl.data.name}}</h4>
-                <p class="card-text">{{$ctrl.data.description}}</p>
-                <a href class="btn btn-primary" ng-click="$ctrl.model.addToCart($ctrl.data._id)">Add to cart</a>
-              </div>
+      
+            
+            <div class="details__main_image">
+                <img ng-src="{{$ctrl.data.imgUrl}}">
             </div>
-          
-      </a>
+            <div class="details__text">
+                <techspecs data="$ctrl.item"></techspecs>
+            </div>
+
+            <div class="details__add_to_cart" ng-click="$ctrl._model.addToCart($ctrl._id)">
+                Add to cart
+            </div>  
+        
       </div>
     `,
-    controller: PreviewController
+    controller: CartElementController
 
 };
 
-export { PreviewComponent };
+export { CartElement };

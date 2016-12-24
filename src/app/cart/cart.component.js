@@ -14,7 +14,7 @@ class CartController {
         this._cart.forEach( (el) => {
             this._model.getOne(el).then( (item) => {
                 // this._item = item;
-                console.log(item)
+                // console.log(item)
                 item.imgUrl = "http://localhost:4001/api/v1/" + item.images[0];
                 this.phones.splice(0,0,item)
                 
@@ -35,7 +35,7 @@ const CartComponent = {
     template: `
     <div class = "cart__wrapper">
       
-        <preview data="phone" ng-repeat="phone in $ctrl.phones"></preview>
+        <cartelement data="phone" ng-repeat="phone in $ctrl.phones"></cartelement>
     </div>    
     `,
     controller: CartController
