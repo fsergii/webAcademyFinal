@@ -21,7 +21,12 @@ const CartElement = {
             </div>
 
             <div class="cart__text">            
-                {{$ctrl.data.name}}
+                <div>
+                    {{$ctrl.data.name}}
+                </div>
+                <div>
+                    Цена: {{$ctrl.data.price}}
+                </div>
             </div>
 
             <div class="cart__remove_from_cart" ng-click="$ctrl.model.removeFromCart($ctrl.data._id)">
