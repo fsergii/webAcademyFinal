@@ -1,8 +1,7 @@
 /**
  * Created by IlyaLitvinov on 15.10.16.
  */
-
- import './menu.styles.css'
+import './menu.styles.css'
 class MenuController {
     /** @ngInject */
     constructor($stateParams) {

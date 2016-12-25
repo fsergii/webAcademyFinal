@@ -5,16 +5,11 @@ import "./details.styles.css";
 class DetailsController {
     /** @ngInject */
     constructor(phonesModel, $stateParams) {
-        
-        console.log($stateParams.id);
         this._model = phonesModel;
         this._model.getOne($stateParams.id).then((data)=> {
             this.item = data;
-             // console.log(this.item.hardware)
-             // debugger;
             this.mainImage = "http://localhost:4001/api/v1/" + data.images[0];
         });
-        // debugger;
         this.item = {};
         this.mainImage = null;
         this._id = $stateParams.id;
@@ -24,12 +19,6 @@ class DetailsController {
     showFull (uri) {
         this.mainImage = "http://localhost:4001/api/v1/" + uri;
     }
-    // addToCart (id) {
-    //     // console.log(this.cart.splice(0,0,id).join(','));
-    //     this._cart.splice(0,0,this._id);
-    //     // console.log(this.tmp_cart)
-    //     localStorage.setItem('cart', this._cart.join(','));
-    // }
 }
 
 const DetailsComponent = {
@@ -47,7 +36,7 @@ const DetailsComponent = {
                 <techspecs data="$ctrl.item"></techspecs>
             </div>
 
-            <div class="details__add_to_cart" ng-click="$ctrl._model.addToCart($ctrl._id)">
+            <div class="details__add_to_cart btn btn-primary" ng-click="$ctrl._model.addToCart($ctrl._id)">
                 Add to cart
             </div>  
         </div>

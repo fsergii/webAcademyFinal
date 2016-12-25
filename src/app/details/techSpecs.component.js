@@ -27,6 +27,9 @@ const TechSpecsComponent = {
         "data": "="
     },
     template: `
+        <div>
+            Цена: {{$ctrl.data.price}}
+        </div>
     	<div>
     		Батарея: {{$ctrl.data.battery.type}}
     	</div>
